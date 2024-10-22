@@ -6,6 +6,7 @@ const session = require('express-session');
 //require('./passport')
 require('dotenv').config();
 const http = require('http'); // get http
+const { startCronJob} = require('./utility/cronJob');
 
 //define env config
 port = process.env.PORT || 3000;
@@ -62,11 +63,18 @@ app.use("/workouts", workoutRoutes);
 
 
 
+app.get('/', (req, res) => {
+    res.send('Server is up and running');
+})
+
+
 // initialize the server
 if(require.main === module){
 	app.listen(port, () => {
 		console.log(`API is now online on port ${ port }`)
 	});
+
+    startCronJob('https://fitnessapi-d8z8.onrender.com');
 }
 
 module.exports = {app, mongoose};
