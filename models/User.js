@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
     
-    firstName: {
-        type: String,
-        required: [true, 'First name is required']
-    },
-    lastName: {
-        type: String,
-        required: [true, 'Last name is required']
-    },
+    // firstName: {
+    //     type: String,
+    //     required: [true, 'First name is required']
+    // },
+    // lastName: {
+    //     type: String,
+    //     required: [true, 'Last name is required']
+    // },
     email: {
         type: String,
         unique: true,
@@ -23,10 +23,10 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    mobileNo: {
-        type: String,
-        required: [true, 'Mobile number is required']
-    }
+    // mobileNo: {
+    //     type: String,
+    //     required: [true, 'Mobile number is required']
+    // }
 });
 
 

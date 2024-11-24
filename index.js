@@ -38,13 +38,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors(corsOptions));
-app.use(session({
-    secret: secret,
-    resave: false,
-    saveUninitialized: false
-}));
+// app.use(session({
+//     secret: secret,
+//     resave: false,
+//     saveUninitialized: false
+// }));
 app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.session());
 
 // define routes
 

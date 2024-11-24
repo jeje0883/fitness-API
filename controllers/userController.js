@@ -25,11 +25,11 @@ module.exports.registerUser = async (req, res) => {
         }
 
         // Validate mobile number length
-        if (req.body.mobileNo.length !== 11) {
-            return res.status(400).send({ 
-                error: 'Mobile number invalid' 
-            });
-        }
+        // if (req.body.mobileNo.length !== 11) {
+        //     return res.status(400).send({ 
+        //         error: 'Mobile number invalid' 
+        //     });
+        // }
 
         // Validate password length
         if (req.body.password.length < 8) {
@@ -43,7 +43,7 @@ module.exports.registerUser = async (req, res) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            mobileNo: req.body.mobileNo,
+            // mobileNo: req.body.mobileNo,
             password: bcrypt.hashSync(req.body.password, 10)
         });
 
